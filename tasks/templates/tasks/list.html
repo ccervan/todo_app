@@ -12,14 +12,16 @@
 {% for task in tasks %}
 
     <div class="item-row">
-        <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a> <!--task.id is to link from views.py-->
-        <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a> 
 
         {% if task.complete == True %}
         <strike>{{task}}</strike>
         {% else %}
         <span>{{task}}</span>
-        {% endif %}
+        {% endif %} <!--strike complete items-->
+        <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a> <!--task.id is to link from views.py-->
+        <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a> 
+         
+        
     </div>
 
 {% endfor %}
