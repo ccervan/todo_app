@@ -34,7 +34,7 @@ def updateTask(request, pk): #pk= primary key
     context= {'form': form}
 
     return render(request, 'tasks/update_task.html', context)
-
+  
 def deleteTask(request, pk):
     item= Task.objects.get(id=pk)
     
